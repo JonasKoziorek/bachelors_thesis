@@ -5,33 +5,15 @@
 \usepackage[backend=biber, style=iso-numeric, alldates=iso]{biblatex} % bibliography
 \usepackage{dcolumn} % numeric column type
 \usepackage{subfig} % subtables and subfigures
-\usepackage[matlab]{diplomalst}
+\usepackage[julia]{diplomalst}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % my own package imports/ I have to check at uni whether they are ok
-\usepackage{minted}
-
-% \usepackage{unicode-math}
-\usepackage{fontspec}
-% \usepackage{polyglossia}
+% \usepackage{fontspec}
 
 % my own commands
-\newcommand{\code}[1]{
-    \inputminted[
-        mathescape=true,
-        linenos=false,
-        numbersep=3pt,
-        frame=lines,
-        numberblanklines=true,
-        breaklines=true,
-        breaksymbol=,
-        framesep=2mm,
-        baselinestretch=1
-        ]{julia}{#1}
-    }
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

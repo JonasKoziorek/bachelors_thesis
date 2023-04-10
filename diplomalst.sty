@@ -19,6 +19,13 @@
 \ProvidesPackage{diplomalst}[\filedate\space \fileversion\space diplomalst package]
 \RequirePackage[final]{listings}
 \RequirePackage{xcolor}
+
+\lstdefinelanguage{Julia}{
+    keywords = {baremodule, begin, break, catch, const, continue, do, else, elseif, end, export, false, finally, for, function, global, if, import, let, local, macro, module, quote, return, struct, true, try, using, while},
+    morecomment=[l]{\#},
+    morestring=[b]"
+}
+
 \lstset{language=[Sharp]C}
 \DeclareOption{ansic}{\lstset{language=[ANSI]C}}
 \DeclareOption{bash}{\lstset{language=bash}}
@@ -29,6 +36,7 @@
 \DeclareOption{gnuplot}{\lstset{language=Gnuplot}}
 \DeclareOption{html}{\lstset{language=HTML}}
 \DeclareOption{java}{\lstset{language=Java}}
+\DeclareOption{julia}{\lstset{language=Julia}}
 \DeclareOption{latex}{\lstset{language=[LaTeX]TeX}}
 \DeclareOption{lisp}{\lstset{language=Lisp}}
 \DeclareOption{lua}{\lstset{language=Lua}}
@@ -76,7 +84,8 @@ literate={á}{{\'{a}}}1 {Á}{{\'{A}}}1 {ä}{{\"{a}}}1 {Ä}{{\"{A}}}
 1 {ř}{{\v{r}}}1 {Ř}{{\v{R}}}1 {ŕ}{{\'{r}}}1 {Ŕ}{{\'{R}}}
 1 {š}{{\v{s}}}1 {Š}{{\v{S}}}1 {ť}{{\v{t}}}1 {Ť}{{\v{T}}}
 1 {ú}{{\'{u}}}1 {Ú}{{\'{U}}}1 {ů}{{\r{u}}}1 {Ů}{{\r{U}}}
-1 {ý}{{\'{y}}}1 {Ý}{{\'{Y}}}1 {ž}{{\v{z}}}1 {Ž}{{\v{Z}}}1 
+1 {ý}{{\'{y}}}1 {Ý}{{\'{Y}}}1 {ž}{{\v{z}}}1 {Ž}{{\v{Z}}}
+1 {σ}{$\sigma$}1 {ρ}{$\rho$}1 {β}{$\beta$}1 {Δ}{$\Delta$}1
 }
 \endinput
 %%

@@ -5,7 +5,36 @@
 \usepackage[backend=biber, style=iso-numeric, alldates=iso]{biblatex} % bibliography
 \usepackage{dcolumn} % numeric column type
 \usepackage{subfig} % subtables and subfigures
-\usepackage[cpp]{diplomalst}
+\usepackage[matlab]{diplomalst}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% my own package imports/ I have to check at uni whether they are ok
+\usepackage{minted}
+
+% \usepackage{unicode-math}
+\usepackage{fontspec}
+% \usepackage{polyglossia}
+
+% my own commands
+\newcommand{\code}[1]{
+    \inputminted[
+        mathescape=true,
+        linenos=false,
+        numbersep=3pt,
+        frame=lines,
+        numberblanklines=true,
+        breaklines=true,
+        breaksymbol=,
+        framesep=2mm,
+        baselinestretch=1
+        ]{julia}{#1}
+    }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % Next, enter data for leading pages
 \ThesisAuthor{Jonáš Koziorek}

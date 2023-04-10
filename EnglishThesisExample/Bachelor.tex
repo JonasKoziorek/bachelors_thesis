@@ -1,0 +1,80 @@
+% First of all, include a document class and options
+\documentclass[english,bachelor]{diploma}
+% There are some addtional packages
+\usepackage[autostyle=true]{csquotes} % enhanced support for quotation marks, support for biblatex package
+\usepackage[backend=biber, style=iso-numeric, alldates=iso]{biblatex} % bibliography
+\usepackage{dcolumn} % numeric column type
+\usepackage{subfig} % subtables and subfigures
+\usepackage[cpp]{diplomalst}
+
+% Next, enter data for leading pages
+\ThesisAuthor{John Doe}
+
+\ThesisSupervisor{prof. William Smith, Ph.D.}
+
+\CzechThesisTitle{Ukázka sazby kvalifikační práce}
+
+\EnglishThesisTitle{Diploma Thesis Typesetting Demo}
+
+\SubmissionYear{2019}
+
+\ThesisAssignmentFileName{FictiveThesisAssignment.pdf}
+
+\Acknowledgement{I would like to thank all those who helped me with the work, because without them this work would not have happened.}
+
+\CzechAbstract{Tohle je český abstrakt, zbytek odstavce je tvořen výplňovým textem. Naší si rozmachu potřebami s posílat v poskytnout ty má plot. Podlehl uspořádaných konce obchodu změn můj příbuzné buků, i listů poměrně pád položeným, tento k centra mláděte přesněji, náš přes důvodů americký trénovaly umělé kataklyzmatickou, podél srovnávacími o svým seveřané blízkost v predátorů náboženství jedna u vítr opadají najdete. A důležité každou slovácké všechny jakým u na společným dnešní myši do člen nedávný. Zjistí hází vymíráním výborná.}
+\CzechKeywords{typografie; \LaTeX; diplomová práce}
+
+\EnglishAbstract{This is English abstract. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Aenean placerat. Vivamus ac leo pretium faucibus. Duis risus. Fusce consectetuer risus a nunc. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Aliquam erat volutpat. Donec vitae arcu. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Curabitur ligula sapien, pulvinar a vestibulum quis, facilisis vel sapien. Vestibulum fermentum tortor id mi. Etiam bibendum elit eget erat. Pellentesque pretium lectus id turpis. Nulla quis diam.}
+\EnglishKeywords{typography; \LaTeX; master thesis}
+
+\AddAcronym{DVD}{Digital Versatile Disc}
+\AddAcronym{TNT}{Trinitrotoluen}
+\AddAcronym{UML}{Unified Modeling Language}
+\AddAcronym{HTML}{Hyper Text Markup Language}
+\AddAcronym{TUG}{\TeX{} Users Group}
+
+% Bibliography resources for BibLaTeX
+\addbibresource{biblatex-examples.bib}
+\addbibresource{coffee.bib}
+
+% New table column type for numeric values
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+
+
+% Beginning of the document
+\begin{document}
+
+% Leading pages printing
+\MakeTitlePages
+
+% Do theses contain any figures? If so, print the list of figures and then move to the next page.
+% If not, delete the next two macros.
+\listoffigures
+\clearpage
+
+% Do theses contain any tables? If so, print the list of table and then move to the next page.
+% If not, delete the next two macros.
+\listoftables
+\clearpage
+
+% Your text starts here...
+\input{Chapters/Introduction.tex}
+\input{Chapters/SampleChapter1.tex}
+\input{Chapters/SampleChapter2.tex}
+\input{Chapters/TechnicalDetails.tex}
+\input{Chapters/Conclusion.tex}
+
+
+\printbibliography[heading=bibintoc]
+
+\appendix
+\input{Chapters/Appendix1.tex}
+\input{Chapters/Appendix2.tex}
+
+
+% Appendix included directly in main LaTeX file. Not all attachments need to be in separate files.
+\chapter{Long Source Code Listing}
+\lstinputlisting[label=src:CppExternal,caption={Long C++ source code taken from external file}]{SourceCodes/ArraySortingAlgorithms.cpp}
+
+\end{document}

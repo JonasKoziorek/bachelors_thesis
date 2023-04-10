@@ -1,0 +1,79 @@
+\chapter*{List of own publication activities and other outcomes}
+\label{sec:ListOfStudentsOwnPublicationActivitiesAndOtherOutcomes}
+\addcontentsline{toc}{chapter}{\nameref{sec:ListOfStudentsOwnPublicationActivitiesAndOtherOutcomes}}
+\verb|biblatex| can be used to compile a list of own publications and other outputs, whether related or not related to the dissertation. Individual bibliographic records of own publications are marked, in \verb|.bib| file, using keywords such as \verb|OwnRelated | and \verb|OwnNonRelated|. Package \verb|biblatex| allows you to filter individual records based on these keywords.
+
+Adapt the page to individual needs, the formatting example of this page is not binding.
+
+\begin{refsection}
+\nocite{MyRelatedArticle1, MyRelatedArticle2}
+\printbibliography[keyword={OwnRelated}, heading=subbibintoc, title={Publications and Outcomes Related to Thesis}]
+\end{refsection}
+
+\begin{refsection}
+\nocite{MyNonrelatedArticle1}
+\printbibliography[keyword={OwnNonRelated}, heading=subbibintoc, title={Publications and Outcomes Not Related to Thesis}]
+\end{refsection}
+
+\section*{Other Outcomes}
+\begin{enumerate}
+	\item Specification of outcome A
+	\item Specification of outcome B
+	\item Specification of outcome C
+\end{enumerate}
+
+
+
+\chapter*{List of Citations}
+\label{sec:ListOfCitations}
+\addcontentsline{toc}{chapter}{\nameref{sec:ListOfCitations}}
+These non-self citations are known\footnote{Adapt the page to individual needs, the formatting example of this page is not binding.}:
+\begin{itemize}
+	\item My publication A
+		\begin{enumerate}
+			\item Other publication citing My publication A
+			\item Other publication citing My publication A
+			\item etc.
+		\end{enumerate}
+	\item My publication B
+		\begin{enumerate}
+			\item Other publication citing My publication B
+			\item Other publication citing My publication B
+			\item Other publication citing My publication B
+			\item etc.
+		\end{enumerate}
+	\item My publication C
+		\begin{enumerate}
+			\item Other publication citing My publication C
+			\item etc.
+		\end{enumerate}
+\end{itemize}
+
+
+
+\chapter*{List of Projects}
+\label{sec:ListOfProjects}
+\addcontentsline{toc}{chapter}{\nameref{sec:ListOfProjects}}
+During my doctoral studies, I participated in these projects\footnote{Adapt the page to individual needs, the formatting example of this page is not binding.}:
+\begin{itemize}
+	\item as principal investigator
+		\begin{enumerate}
+			\item Project A specification
+			\item Project B specification
+			\item etc.
+		\end{enumerate}
+
+	\item as co-investigator
+		\begin{enumerate}[resume]
+			\item Project C specification
+			\item etc.
+		\end{enumerate}
+
+	\item as team member
+		\begin{enumerate}[resume]
+			\item Project D specification
+			\item etc.
+		\end{enumerate}
+\end{itemize}
+
+\endinput

@@ -80,8 +80,8 @@
 \committeeThree{[Committee Member \#3]} %Committee member #3's name
 
 %%  If you'd like to add the CWRU logo from your title page, simply add the "[logo]" text to the maketitle command. Note that the School of Graduate Studies doesn't like this.
-%\maketitle[logo]
-\maketitle
+\maketitle[logo]
+%\maketitle
 
 \begin{dedication} 	 
    [Add a dedication page here. If you do not wish to add any to your thesis, you may simply remove this block of text from the document along with the begin and end statements.]
@@ -127,7 +127,8 @@ If you're new to \LaTeX{} and would like to begin by learning the basics, please
 
 You can define terms and/or symbols in a glossary \index{glossary} as you talk about key terms in your thesis. So what's a \gls{galaxy}? These can also include acronyms, such as \acrlong{leo}, which is abbreviated as \acrshort{leo}. You should always define acronyms at the point of first use in the text, in addition to including them in the glossary.
 
-\input{minted}{julia}{codes/1code.jl}
+\inputminted{julia}{codes/1code.jl}
+
 \begin{minted}{julia}
 # function to calculate the volume of a sphere
 function sphere_vol(r)

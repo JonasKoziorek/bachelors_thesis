@@ -10,11 +10,16 @@
 \renewcommand{\nomname}{List of Symbols}
 
 \usepackage{mathptmx}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
 \usepackage{amsfonts, amsmath, amsthm, amssymb}
 \usepackage{newtxtext,newtxmath}
+
+% my packages
 \usepackage{minted}
+% \usepackage{unicode-math}
+% \usepackage{fontspec}
+% \usepackage{polyglossia}
 
 \newcommand{\dif}{\mathrm{d}}
 \newcommand{\Dif}{\mathrm{D}}
@@ -25,6 +30,19 @@
 \renewcommand{\div}{\underline{\nabla} \cdot}
 \newcommand{\paren}[1]{\left( {#1} \right)}
 \newcommand{\norm}[1]{\lVert#1\rVert}
+
+% my own commands
+\newcommand{\code}[1]{
+    \inputminted[
+        mathescape=true,
+        linenos=true,
+        numbersep=3pt,
+        frame=single,
+        numberblanklines=true,
+        breaklines=true,
+        breaksymbol=,
+        framesep=2mm]{julia}{#1}
+    }
 
 % Must use biblatex to produce the Published Contents and Contributions, per-chapter bibliography (if desired), etc.
 \usepackage[
@@ -61,7 +79,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-\pagenumbering{roman}
+% \pagenumbering{roman}
 
 \title{Study of dynamical systems using the Julia programming language} %Title of your thesis in title case
 \author{Jonáš Koziorek} %Your name
@@ -69,22 +87,20 @@
 \degreeaward{Bachelor of mathematics} % Degree to be awarded
 \department{Department of Applied Mathematics}
 \university{VSB - Technical University of Ostrava}    % Institution name  
-\unilogo{cwru_logo.eps}                                 % Institution logo
+\unilogo{vsb_logo.eps}                                 % Institution logo
 \defendmonth{May, 2024}      % Graduation month and year
 \defenddate{30.4.2024}     % Date of thesis defense
 
 %Committee Member names. If you have a different number of committee members for your defense, you will need to edit lines 183-190 of cwru_thesis.cls accordingly.
-\committeeChair{[Chair Name]} %Committee Chair's name
-\committeeOne{[Committee Member \#1]} %Committee member #1's name
-\committeeTwo{[Committee Member \#2]} %Committee member #2's name
-\committeeThree{[Committee Member \#3]} %Committee member #3's name
+\committeeChair{Marek Lampart} %Committee Chair's name
+\committeeOne{Jiří Tomčala} %Committee member #1's name
+\committeeTwo{[Committee Member]} %Committee member #2's name
+\committeeThree{[Committee Member]} %Committee member #3's name
 
-%%  If you'd like to add the CWRU logo from your title page, simply add the "[logo]" text to the maketitle command. Note that the School of Graduate Studies doesn't like this.
 \maketitle[logo]
-%\maketitle
 
 \begin{dedication} 	 
-   [Add a dedication page here. If you do not wish to add any to your thesis, you may simply remove this block of text from the document along with the begin and end statements.]
+    This thesis is dedicated to ..... to be added.
 \end{dedication}
 
 \begin{KeepFromToc}
@@ -94,24 +110,21 @@
 \listoffigures
 
 \begin{preface}
-    [You may provide a preface if you wish, it is entirely optional. If you do not wish to provide a preface, simply delete the entire preface block, including the begin and end statements.]
+    preface ... to be added
 \end{preface}
 
 \begin{acknowledgements}
-    [Add an acknowledgements page here. If you do not wish to add any to your thesis, you may simply remove this block of text from the document along with the begin and end statements.]
+    I would like to thank ... to be added.
 \end{acknowledgements}
 
 %If you have acroynms you wish to define, include this line. If not, you may delete it. See https://www.overleaf.com/learn/latex/Glossaries#Acronyms for more information about how to use Acronyms.
 \printglossary[type=\acronymtype, title=List of Abbreviations]
 
-%If you have terms you wish to define in a glossary, include this line. If not, you may delete it. See https://www.overleaf.com/learn/latex/Glossaries for more information about how to use Glossaries
-\printglossary
-
 %If you have a nomenclature section for defining symbols, include this line. If not, you may delete it. See https://www.overleaf.com/learn/latex/Nomenclatures for more information about how to use Nomenclatures
 \printnomenclature
 
 \begin{abstract}
-   [Include the text of the abstract here. Dissertation abstracts must not exceed 350 words. Thesis abstracts should be limited to 150 words. There must be one overall abstract for the entire work, even if the ETD consists of separate articles. Individual abstracts can be included in addition to, but not instead of the main abstract.]
+    abstract to be added
 \end{abstract}
 
 \mainmatter
@@ -127,15 +140,7 @@ If you're new to \LaTeX{} and would like to begin by learning the basics, please
 
 You can define terms and/or symbols in a glossary \index{glossary} as you talk about key terms in your thesis. So what's a \gls{galaxy}? These can also include acronyms, such as \acrlong{leo}, which is abbreviated as \acrshort{leo}. You should always define acronyms at the point of first use in the text, in addition to including them in the glossary.
 
-\inputminted{julia}{codes/1code.jl}
-
-\begin{minted}{julia}
-# function to calculate the volume of a sphere
-function sphere_vol(r)
-    return 4/3*pi*r^3
-end
-\end{minted}
-
+\code{codes/1code.jl}
 
 \section{This is a Section} \label{sec:exsection}
 \lipsum[1-2]
@@ -144,7 +149,7 @@ Check this out! I can reference a figure number in the text of the document by r
 
 \begin{figure}[hbt!]
     \centering
-    \includegraphics[width=.5\textwidth]{cwru_logo.eps}
+    \includegraphics[width=.5\textwidth]{vsb_logo.eps}
     \caption{This is a figure. \label{fig:logo}}
 \end{figure}
 
